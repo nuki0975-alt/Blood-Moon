@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM: BLOOD MOON</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@500;700;900&family=Noto+Sans+KR:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="bg-grid"></div>
+    <div class="bg-blood-moon"></div>
+
+    <div id="intro-screen">
+        <h1 class="intro-title glitch-effect" data-text="BLOOD MOON">BLOOD MOON</h1>
+        <p class="intro-sub">SYSTEM OVERRIDE INITIATED... WELCOME TO YEAR 3064</p>
+    </div>
+
+    <div class="mouse-glow" id="mouseGlow"></div>
+    <div class="scanlines"></div>
+
+    <nav class="hologram-nav top-gnb">
+        <button class="nav-btn active" onclick="switchTab('main')">MAIN</button>
+        <button class="nav-btn" onclick="switchTab('characters')">ROSTER</button>
+        <button class="nav-btn" onclick="switchTab('worldview')">LORE</button>
+        <button class="nav-btn" onclick="switchTab('records')">RECORDS</button>
+    </nav>
+
+    <div class="container" id="main-container">
+        <header class="main-header">
+            <div class="header-content">
+                <h1 class="glitch glitch-effect hero-title" data-text="ARCHIVE: BLOOD MOON">ARCHIVE: BLOOD MOON</h1>
+                <p class="subtitle hero-subtitle">[ CLASSIFIED DATABASE // YEAR 3064 // ACCESS GRANTED ]</p>
+            </div>
+        </header>
+
+        <main>
+            
+            <section id="main" class="tab-content active hologram-panel hero-main">
+                <div class="hero-content-wrapper">
+                    <div class="hero-left">
+                        <h2 class="neon-text hero-sub-heading">DATABASE INITIATED</h2>
+                        <p class="large-text desc-text">본 데이터베이스는 3064년 현재, 대재앙 이후 생존한 인류와 이형의 존재들에 대한 극비 정보를 담고 있습니다.</p>
+                        <div class="alert-box alert-hero">
+                            <p>⚠ [경고] 도심 내 다수의 '고위 혈귀' 반응 관측. 민간인은 즉시 지하 방공호로 대피하십시오.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-right">
+                        <div class="faction-overview hero-factions">
+                            <h3 class="sub-heading">[ REGISTERED FACTIONS ]</h3>
+                            <ul class="cyber-list faction-list">
+                                <li><strong class="highlight">CRIMSON VEIN:</strong> 대-혈귀 전선의 최전방을 담당하는 국내 최상위 능력자 집단.</li>
+                                <li><strong style="color:var(--neon-red);">CARMINE SOCIETY:</strong> 적월을 숭배하며 제2의 대재앙을 획책하는 극단적 테러 조직.</li>
+                                <li><strong style="color:var(--neon-purple);">B.C.U:</strong> 정부 직속 소수 정예 특수 부대. (Blood Control Unit)</li>
+                                <li><strong style="color:var(--neon-grey);">GREY ZONE:</strong> 이권과 생존만을 위해 움직이는 비공식 무법자 연합.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="characters" class="tab-content hologram-panel">
+                <h2 class="neon-text">TARGET ROSTER</h2>
+                <p>소속별 감시 대상 및 요원 목록입니다. 열람하고자 하는 대상을 선택하십시오.</p>
+                
+                <h3 class="faction-title cv-color">▶ CRIMSON VEIN</h3>
+                <div class="card-grid">
+                    <div class="character-card" onclick="openCharacterDetail('gaseol')">
+                        <div class="hologram-img-placeholder"><img src="images/가설.png" alt="가설" class="char-img" onerror="this.style.display='none'"></div>
+                        <h3>가설 (Leader)</h3><p class="rank">GEN 3</p>
+                    </div>
+                    <div class="character-card" onclick="openCharacterDetail('yangseonhee')">
+                        <div class="hologram-img-placeholder"><img src="images/양선희.png" alt="양선희" class="char-img" onerror="this.style.display='none'"></div>
+                        <h3>양선희 (Vanguard)</h3><p class="rank">GEN 1</p>
+                    </div>
+                    <div class="character-card" onclick="openCharacterDetail('yunari')">
+                        <div class="hologram-img-placeholder"><img src="images/유나리.png" alt="유나리" class="char-img" onerror="this.style.display='none'"></div>
+                        <h3>유나리 (Specialist)</h3><p class="rank">GEN 3</p>
+                    </div>
+                    <div class="character-card" onclick="openCharacterDetail('rouge')">
+                        <div class="hologram-img-placeholder"><img src="images/루즈.png" alt="루즈" class="char-img" onerror="this.style.display='none'"></div>
+                        <h3>루즈 (Striker)</h3><p class="rank">GEN 2</p>
+                    </div>
+                    <div class="character-card" onclick="openCharacterDetail('sora')">
+                        <div class="hologram-img-placeholder"><img src="images/소라.png" alt="소라" class="char-img" onerror="this.style.display='none'"></div>
+                        <h3>소라 (Sniper)</h3><p class="rank">GEN 2</p>
+                    </div>
+                </div>
+
+                <h3 class="faction-title cs-color" style="margin-top: 40px;">▶ CARMINE SOCIETY</h3>
+                <div class="card-grid">
+                    <div class="character-card restrict-card" onclick="openCharacterDetail('leeseohyun')">
+                        <div class="hologram-img-placeholder"><img src="images/이서현.png" alt="이서현" class="char-img" onerror="this.style.display='none'"></div>
+                        <h3>이서현 (Boss)</h3><p class="rank">GEN 3 / 혈귀화</p>
+                    </div>
+                    <div class="character-card restrict-card" onclick="openCharacterDetail('parkjunwoo')">
+                        <div class="hologram-img-placeholder"><img src="images/박준우.png" alt="박준우" class="char-img" onerror="this.style.display='none'"></div>
+                        <h3>박준우</h3><p class="rank">GEN 1 / 고위 혈귀</p>
+                    </div>
+                    <div class="character-card restrict-card" onclick="openCharacterDetail('jungsoeun')">
+                        <div class="hologram-img-placeholder"><img src="images/정소은.png" alt="정소은" class="char-img" onerror="this.style.display='none'"></div>
+                        <h3>정소은 (Strategist)</h3><p class="rank">GEN 2</p>
+                    </div>
+                    <div class="character-card restrict-card" onclick="openCharacterDetail('kimarang')">
+                        <div class="hologram-img-placeholder"><img src="images/김아랑.png" alt="김아랑" class="char-img" onerror="this.style.display='none'"></div>
+                        <h3>김아랑</h3><p class="rank">GEN 2 / 혈귀</p>
+                    </div>
+                    <div class="character-card restrict-card" onclick="openCharacterDetail('kangdonghyuk')">
+                        <div class="hologram-img-placeholder"><img src="images/강동혁.png" alt="강동혁" class="char-img" onerror="this.style.display='none'"></div>
+                        <h3>강동혁 (Fighter)</h3><p class="rank">GEN 1</p>
+                    </div>
+                </div>
+
+                <h3 class="faction-title bcu-color" style="margin-top: 40px;">▶ B.C.U</h3>
+                <div class="card-grid">
+                    <div class="character-card bcu-card" onclick="openCharacterDetail('choijinhyuk')">
+                        <div class="hologram-img-placeholder"><img src="images/최진혁.png" alt="최진혁" class="char-img" onerror="this.style.display='none'"></div>
+                        <h3>최진혁 (Commander)</h3><p class="rank">GEN 2</p>
+                    </div>
+                    <div class="character-card bcu-card" onclick="openCharacterDetail('leedaeun')">
+                        <div class="hologram-img-placeholder"><img src="images/이다은.png" alt="이다은" class="char-img" onerror="this.style.display='none'"></div>
+                        <h3>이다은 (Rookie)</h3><p class="rank">GEN 3</p>
+                    </div>
+                    <div class="character-card bcu-card" onclick="openCharacterDetail('hanjisoo')">
+                        <div class="hologram-img-placeholder"><img src="images/한지수.png" alt="한지수" class="char-img" onerror="this.style.display='none'"></div>
+                        <h3>한지수 (Medic)</h3><p class="rank">GEN 2</p>
+                    </div>
+                </div>
+
+                <h3 class="faction-title gz-color" style="margin-top: 40px;">▶ GREY ZONE</h3>
+                <div class="card-grid">
+                    <div class="character-card gz-card" onclick="openCharacterDetail('ain')">
+                        <div class="hologram-img-placeholder"><img src="images/아인.png" alt="아인" class="char-img" onerror="this.style.display='none'"></div>
+                        <h3>아인 (Broker)</h3><p class="rank">GEN 3</p>
+                    </div>
+                    <div class="character-card gz-card" onclick="openCharacterDetail('choijongho')">
+                        <div class="hologram-img-placeholder"><img src="images/최종호.png" alt="최종호" class="char-img" onerror="this.style.display='none'"></div>
+                        <h3>최종호 (Weapon Smith)</h3><p class="rank">GEN 1</p>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="character-detail" class="tab-content hologram-panel">
+                <button class="nav-btn back-btn" onclick="switchTab('characters')">◀ RETURN TO ROSTER</button>
+                <div class="detail-container">
+                    <div class="detail-visual">
+                        <div class="hologram-img-placeholder large-img" id="detail-visual-box">AWAITING VISUAL DATA...</div>
+                    </div>
+                    <div class="detail-info">
+                        <h2 id="detail-name" class="glitch-effect neon-text" data-text="NAME">NAME</h2>
+                        <p class="rank" id="detail-rank">등급: -</p>
+                        
+                        <div class="stats-box">
+                            <div class="stat-row">
+                                <span class="stat-label">BLOOD PURITY</span>
+                                <div class="stat-bar"><div class="stat-fill" id="stat-ether"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">COMBAT POWER</span>
+                                <div class="stat-bar"><div class="stat-fill" id="stat-combat"></div></div>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">DANGER LEVEL</span>
+                                <div class="stat-bar"><div class="stat-fill alert-fill" id="stat-danger"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="detail-desc">
+                            <h3 class="sub-heading">[ PERSONAL RECORD ]</h3>
+                            <p id="detail-bio" class="large-text"></p>
+                            
+                            <h3 class="sub-heading">[ ABILITIES & TRAITS ]</h3>
+                            <ul class="cyber-list" id="detail-skills"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="worldview" class="tab-content hologram-panel">
+                <h2 class="neon-text">LORE : THE BLOOD MOON ERA</h2>
+                <p class="large-text">서기 3064년. 하늘을 붉게 물들인 '대재앙' 이후 인류의 궤적은 영원히 비틀렸다.</p>
+                <p class="large-text">적월의 빛을 견디지 못한 자들은 이성을 상실한 <strong>'혈귀(Blood Demon)'</strong>가 되어 도심을 배회하고 있으며, 살아남은 인류는 혈액을 매개로 이능력을 발현한 <strong>'능력자'</strong>들에게 무력을 의존하는 기형적인 사회를 형성했다.</p>
+                
+                <h3 class="sub-heading" style="margin-top: 40px;">[ 각성자 세대 분류 ]</h3>
+                <ul class="cyber-list">
+                    <li><strong class="highlight">GEN 1 (혈체 강화형):</strong> 체내의 혈류를 극대화해 신체 능력을 폭발적으로 끌어올리는 육탄전의 스페셜리스트. 대다수의 혈귀가 이 단계에 속한다.</li>
+                    <li><strong class="highlight">GEN 2 (혈류 지배형):</strong> 체외로 배출된 혈액을 자유롭게 조종하거나 응고시켜 무기로 변환하는 형태 변환의 지배자들. 단, 피를 무(無)에서 창조할 수는 없다.</li>
+                    <li><strong style="color:var(--neon-pink);">GEN 3 (혈원 생성형):</strong> 전설로 치부되는 기적의 세대. 피를 생성해 내며, 독소나 폭발성 등 특수한 성질을 부여할 수 있는 규격 외의 존재들이다.</li>
+                </ul>
+            </section>
+
+            
+            <section id="records" class="tab-content hologram-panel">
+                <h2 class="neon-text">ARCHIVED RECORDS</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="date">YEAR 2064</span>
+                        <h4>대재앙 (The Great Catastrophe) 발발</h4>
+                        <p>하늘에 최초의 핏빛 보름달이 뜬 날. 인류의 과반수가 달빛에 노출되어 식욕만 남은 이형의 괴물, '혈귀'로 변이. 인류 문명의 80%가 붕괴됨.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">YEAR 2073</span>
+                        <h4>무법 지대화 (Era of Warlords)</h4>
+                        <p>기존 국가의 정부 체제가 완전히 무너짐. 지성을 유지한 극소수의 '고위 혈귀'들이 폐허가 된 도시들을 점령하며 군림하기 시작.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">YEAR 2105</span>
+                        <h4>최초의 각성 (The First Awakening)</h4>
+                        <p>적월의 빛을 견뎌낸 인간들의 유전자에서 변이가 발생, 피를 다루는 능력자들이 전면에 등장하여 혈귀들을 상대로 반격을 개시함.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">YEAR 2240</span>
+                        <h4>혈귀 대항 단체 설립</h4>
+                        <p>능력자들을 중심으로 구축된 대-혈귀 단체 크림슨 베인(Crimson Vein)이 창설됨</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">YEAR 2651</span>
+                        <h4>제 2세대 능력자 등장</h4>
+                        <p>피를 신체 외부에서 조종 및 응고 등의 유동적인 사용이 가능한 능력자들이 등장함.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">YEAR 2890</span>
+                        <h4>B.C.U 창설 및 능력자 규합</h4>
+                        <p>재건된 정부가 능력자들을 공식적인 무력 집단으로 규합. 민간 능력자들을 '히어로'라 칭하며 대형 길드들이 탄생함.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">YEAR 2901</span>
+                        <h4>제 3세대 능력자 등장</h4>
+                        <p>피 무제한 생성 및 특수성을 띈 피를 사용하는 능력자가 등장함.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">YEAR 2914</span>
+                        <h4>능력자 세대 체제 설립</h4>
+                        <p>능력자들의 세대를 구분하는 체제가 공식적으로 정리됨.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">YEAR 3050</span>
+                        <h4>적월의 이단 (The Crimson Heresy)</h4>
+                        <p>대재앙을 '구원'이라 부르며 혈귀와 인간 능력자가 결탁한 극단적 비밀 결사, 카르민 소사이어티가 암흑가에서 세력을 키우기 시작함.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">YEAR 3064 (현재)</span>
+                        <h4>제2의 대재앙 임박</h4>
+                        <p>카르민 소사이어티가 양지로 부상하며 제 3세대 능력자들을 사냥하기 시작함. 전 세계의 하늘이 다시금 붉은빛으로 물들 조짐을 보이고 있음.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
